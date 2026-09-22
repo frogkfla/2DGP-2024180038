@@ -2,7 +2,7 @@
 from pico2d import *
 
 open_canvas(800,600)
-
+chracter = load_image('character.png')
 
 def move_circle():
     print("circle")
@@ -25,4 +25,3 @@ while True:
 
     break
 
-close_canvas()
