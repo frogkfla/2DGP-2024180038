@@ -16,7 +16,7 @@ def draw_character(x, y):
 
 # 원 모양으로 캐릭터 이동
 def draw_circle():
-    print("circle")
+    print(" 원 - 운동 시작 ")
 
     center_x = 400
     center_y = 300
@@ -34,7 +34,6 @@ def draw_circle():
 
 # 사각형의 위쪽 방향 이동
 def draw_top():
-    print("top")
 
     stat_x = 50
     end_x = 750
@@ -76,7 +75,7 @@ def draw_left():
 
 # 사각형 모양으로 캐릭터 이동 ( 위 - 오 - 아 - 왼 )
 def draw_rectangle():
-    print("rectangle")
+    print(" 사각형 - 운동 시작 ")
     draw_top()
     draw_right()
     draw_bottom()
@@ -97,7 +96,7 @@ def draw_line(x0, y0, x1, y1):
 
 # 삼각형 아래쪽 A -> B 이동    
 def draw_triangle_bottom():
-    print("triangle - bottom (A -> B)")
+    print(" 삼각형 - A -> B 이동 ")
 
     start_x = 100
     start_y = 100
@@ -109,7 +108,7 @@ def draw_triangle_bottom():
 
 # 삼각형 오른쪽 대각선 B -> C 이동
 def draw_triangle_right_up():
-    print("triangle - right up (B -> C)")
+    print(" 삼각형 - B -> C 이동 ")
 
     start_x = 700
     start_y = 100
@@ -121,7 +120,7 @@ def draw_triangle_right_up():
 
 # 삼각형 왼쪽 대각선 C -> A 이동
 def draw_triangle_left_down():
-    print("triangle - left down (C -> A)")
+    print(" 삼각형 - C -> A 이동 ")
 
     start_x = 400
     start_y = 500
@@ -133,7 +132,7 @@ def draw_triangle_left_down():
 
 # 삼각형 모양으로 캐릭터 이동 ( A - B - C - A )
 def draw_triangle():
-    print("triangle")
+    print(" 삼각형 - 운동 시작 ")
     draw_triangle_bottom()
     draw_triangle_right_up()
     draw_triangle_left_down()
