@@ -61,9 +61,9 @@ def draw_line(x0, y0, x1, y1):
         draw_character(x, y)
 
     
-def draw_triangle():
-    print("triangle")
-    pass
+def draw_triangle_bottom():
+    print("triangle - bottom (A -> B)")
+    draw_line(100, 100, 700, 100)
 
 
 while True :
