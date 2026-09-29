@@ -6,6 +6,14 @@ open_canvas(800, 600)
 character = load_image('character.png')
 
 
+# 캐릭터를 지정한 위치에 그리는 함수 
+def draw_character(x, y): 
+    clear_canvas()
+    character.draw(x, y)
+    update_canvas()
+    delay(0.01)   
+
+
 # 원 모양으로 캐릭터 이동
 def draw_circle():
     print("circle")
@@ -34,14 +42,6 @@ def draw_top():
 
     for x in range(stat_x, end_x, 5):
         draw_character(x, top_y)
-
-
-# 캐릭터를 지정한 위치에 그리는 함수 
-def draw_character(x, y): 
-    clear_canvas()
-    character.draw(x, y)
-    update_canvas()
-    delay(0.01)   
 
 
 # 사각형의 오른쪽 방향 이동
