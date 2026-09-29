@@ -22,7 +22,7 @@ def draw_circle():
     center_y = 300
     radius = 200
 
-    for deg in range(0, 360, 5): # 0~360도 5도씩 이동
+    for deg in range(0, 360, 2): # 0~360도 2도씩 이동
         rad = math.radians(deg) # 각도를 라디안으로 변환
 
         # 원 위의 x,y 좌표 계산
