@@ -52,6 +52,15 @@ def draw_rectangle():
     draw_left()
     pass
 
+def draw_line(x0, y0, x1, y1):
+    n = 100
+    for step in range(n + 1):
+        t = step / n
+        x = x0 + (x1 - x0) * t
+        y = y0 + (y1 - y0) * t
+        draw_character(x, y)
+
+    
 def draw_triangle():
     print("triangle")
     pass
