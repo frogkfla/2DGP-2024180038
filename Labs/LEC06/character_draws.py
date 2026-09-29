@@ -41,9 +41,15 @@ def draw_character(x, y):
 
 
 def draw_right():
-    for y in range(550, 50, -5):
-        draw_character(750, y)
+
+    right_x = 750
+    stat_y = 550
+    end_y = 50
+
+    for y in range(stat_y, end_y, -5):
+        draw_character(right_x, y)
     pass
+
 
 def draw_bottom():
     for x in range(750, 50, -5):
