@@ -52,9 +52,14 @@ def draw_right():
 
 
 def draw_bottom():
-    for x in range(750, 50, -5):
-        draw_character(x, 50)
+    stat_x = 750
+    end_x = 50
+    bottom_y = 50
+
+    for x in range(stat_x, end_x, -5):
+        draw_character(x, bottom_y)
     pass
+
 
 def draw_left():
     for y in range(50, 550, 5):
