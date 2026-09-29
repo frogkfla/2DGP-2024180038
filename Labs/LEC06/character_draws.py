@@ -5,6 +5,7 @@ import math
 open_canvas(800, 600)
 character = load_image('character.png')
 
+
 def draw_circle():
     print("circle")
 
@@ -19,8 +20,7 @@ def draw_circle():
         y = center_y + radius * math.sin(rad)
 
         draw_character(x, y)
-    pass
-
+    
 
 def draw_top():
     print("top")
@@ -47,7 +47,6 @@ def draw_right():
 
     for y in range(stat_y, end_y, -5):
         draw_character(right_x, y)
-    pass
 
 
 def draw_bottom():
@@ -57,7 +56,6 @@ def draw_bottom():
 
     for x in range(stat_x, end_x, -5):
         draw_character(x, bottom_y)
-    pass
 
 
 def draw_left():
@@ -67,7 +65,6 @@ def draw_left():
 
     for y in range(stat_y, end_y, 5):
         draw_character(left_x, y)
-    pass
 
 
 def draw_rectangle():
@@ -76,7 +73,7 @@ def draw_rectangle():
     draw_right()
     draw_bottom()
     draw_left()
-    pass
+
 
 def draw_line(x0, y0, x1, y1):
     steps = 100
@@ -85,7 +82,7 @@ def draw_line(x0, y0, x1, y1):
         t = step / steps
         x = x0 + (x1 - x0) * t
         y = y0 + (y1 - y0) * t
-        
+
         draw_character(x, y)
 
     
@@ -127,7 +124,6 @@ def draw_triangle():
     draw_triangle_bottom()
     draw_triangle_right_up()
     draw_triangle_left_down()
-    pass
 
 
 while True :
@@ -135,6 +131,5 @@ while True :
     draw_rectangle()
     draw_triangle()
 
-    pass
 
 close_canvas()
