@@ -79,11 +79,13 @@ def draw_rectangle():
     pass
 
 def draw_line(x0, y0, x1, y1):
-    n = 100
-    for step in range(n + 1):
-        t = step / n
+    steps = 100
+
+    for step in range(steps + 1):
+        t = step / steps
         x = x0 + (x1 - x0) * t
         y = y0 + (y1 - y0) * t
+        
         draw_character(x, y)
 
     
@@ -126,6 +128,7 @@ def draw_triangle():
     draw_triangle_right_up()
     draw_triangle_left_down()
     pass
+
 
 while True :
     draw_circle()
