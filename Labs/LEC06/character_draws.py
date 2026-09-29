@@ -65,6 +65,10 @@ def draw_triangle_bottom():
     print("triangle - bottom (A -> B)")
     draw_line(100, 100, 700, 100)
 
+def draw_triangle_right_up():
+    print("triangle - right up (B -> C)")
+    draw_line(700, 100, 400, 500)
+
 
 while True :
     # draw_circle()
