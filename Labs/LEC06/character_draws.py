@@ -73,6 +73,12 @@ def draw_triangle_left_down():
     print("triangle - left down (C -> A)")
     draw_line(400, 500, 100, 100)
 
+def draw_triangle():
+    print("triangle")
+    draw_triangle_bottom()
+    draw_triangle_right_up()
+    draw_triangle_left_down()
+    pass
 
 while True :
     # draw_circle()
