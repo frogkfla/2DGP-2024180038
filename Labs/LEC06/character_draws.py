@@ -89,7 +89,14 @@ def draw_line(x0, y0, x1, y1):
     
 def draw_triangle_bottom():
     print("triangle - bottom (A -> B)")
-    draw_line(100, 100, 700, 100)
+
+    start_x = 100
+    start_y = 100
+    end_x = 700
+    end_y = 100
+
+    draw_line(start_x, start_y, end_x, end_y)
+
 
 def draw_triangle_right_up():
     print("triangle - right up (B -> C)")
