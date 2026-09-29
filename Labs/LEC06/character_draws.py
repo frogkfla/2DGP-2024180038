@@ -24,8 +24,14 @@ def draw_circle():
 
 def draw_top():
     print("top")
-    for x in range(50, 750, 5):
-        draw_character(x, 550)
+
+    stat_x = 50
+    end_x = 750
+    top_y = 550
+
+    for x in range(stat_x, end_x, 5):
+        draw_character(x, top_y)
+
 
 def draw_character(x, y):
     clear_canvas()
