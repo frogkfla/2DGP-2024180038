@@ -6,6 +6,7 @@ open_canvas(800, 600)
 character = load_image('character.png')
 
 
+# 원 모양으로 캐릭터 이동
 def draw_circle():
     print("circle")
 
@@ -13,15 +14,17 @@ def draw_circle():
     center_y = 300
     radius = 200
 
-    for deg in range(0, 360, 5):
-        rad = math.radians(deg)
-        
+    for deg in range(0, 360, 5): # 0~360도 5도씩 이동
+        rad = math.radians(deg) # 각도를 라디안으로 변환
+
+        # 원 위의 x,y 좌표 계산
         x = center_x + radius * math.cos(rad)
         y = center_y + radius * math.sin(rad)
 
         draw_character(x, y)
     
 
+# 사각형의 위쪽 방향 이동
 def draw_top():
     print("top")
 
@@ -33,13 +36,15 @@ def draw_top():
         draw_character(x, top_y)
 
 
-def draw_character(x, y):
+# 캐릭터를 지정한 위치에 그리는 함수 
+def draw_character(x, y): 
     clear_canvas()
     character.draw(x, y)
     update_canvas()
     delay(0.01)   
 
 
+# 사각형의 오른쪽 방향 이동
 def draw_right():
     right_x = 750
     stat_y = 550
@@ -49,6 +54,7 @@ def draw_right():
         draw_character(right_x, y)
 
 
+# 사각형의 아래쪽 방향 이동
 def draw_bottom():
     stat_x = 750
     end_x = 50
@@ -58,6 +64,7 @@ def draw_bottom():
         draw_character(x, bottom_y)
 
 
+# 사각형의 왼쪽 방향 이동
 def draw_left():
     left_x = 50
     stat_y = 50
@@ -67,6 +74,7 @@ def draw_left():
         draw_character(left_x, y)
 
 
+# 사각형 모양으로 캐릭터 이동 ( 위 - 오 - 아 - 왼 )
 def draw_rectangle():
     print("rectangle")
     draw_top()
@@ -75,17 +83,19 @@ def draw_rectangle():
     draw_left()
 
 
+# 두 점 사이를 직선으로 이동
 def draw_line(x0, y0, x1, y1):
-    steps = 100
+    steps = 100 
 
     for step in range(steps + 1):
-        t = step / steps
+        t = step / steps 
         x = x0 + (x1 - x0) * t
         y = y0 + (y1 - y0) * t
 
         draw_character(x, y)
 
-    
+
+# 삼각형 아래쪽 A -> B 이동    
 def draw_triangle_bottom():
     print("triangle - bottom (A -> B)")
 
@@ -97,6 +107,7 @@ def draw_triangle_bottom():
     draw_line(start_x, start_y, end_x, end_y)
 
 
+# 삼각형 오른쪽 대각선 B -> C 이동
 def draw_triangle_right_up():
     print("triangle - right up (B -> C)")
 
@@ -108,6 +119,7 @@ def draw_triangle_right_up():
     draw_line(start_x, start_y, end_x, end_y)
 
 
+# 삼각형 왼쪽 대각선 C -> A 이동
 def draw_triangle_left_down():
     print("triangle - left down (C -> A)")
 
@@ -119,6 +131,7 @@ def draw_triangle_left_down():
     draw_line(start_x, start_y, end_x, end_y)
 
 
+# 삼각형 모양으로 캐릭터 이동 ( A - B - C - A )
 def draw_triangle():
     print("triangle")
     draw_triangle_bottom()
@@ -126,6 +139,7 @@ def draw_triangle():
     draw_triangle_left_down()
 
 
+# 원 -> 사각형 -> 삼각형 무한 루프
 while True :
     draw_circle()
     draw_rectangle()
