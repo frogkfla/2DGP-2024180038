@@ -107,11 +107,18 @@ def draw_triangle_right_up():
     end_y = 500
 
     draw_line(start_x, start_y, end_x, end_y)
-    
+
 
 def draw_triangle_left_down():
     print("triangle - left down (C -> A)")
-    draw_line(400, 500, 100, 100)
+
+    start_x = 400
+    start_y = 500
+    end_x = 100
+    end_y = 100
+
+    draw_line(start_x, start_y, end_x, end_y)
+
 
 def draw_triangle():
     print("triangle")
