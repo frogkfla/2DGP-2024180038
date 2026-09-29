@@ -100,7 +100,14 @@ def draw_triangle_bottom():
 
 def draw_triangle_right_up():
     print("triangle - right up (B -> C)")
-    draw_line(700, 100, 400, 500)
+
+    start_x = 700
+    start_y = 100
+    end_x = 400
+    end_y = 500
+
+    draw_line(start_x, start_y, end_x, end_y)
+    
 
 def draw_triangle_left_down():
     print("triangle - left down (C -> A)")
