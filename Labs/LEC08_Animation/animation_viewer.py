@@ -32,7 +32,7 @@ def play_animation(animation):
         
         for frame in animation:
             draw_frame(frame)
-            delay(0.08)
+            delay(0.07)
     
     delay(1.0)
 
