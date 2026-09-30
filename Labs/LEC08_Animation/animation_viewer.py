@@ -37,14 +37,20 @@ def check_quit():
 
 
 def play_animation(animation):
-    
+     
     for repeat in range(5):
-        
+         
         for frame in animation:
+
+            if check_quit():
+                return False
+
             draw_frame(frame)
-            delay(0.07)
-    
+            delay(0.08)
+     
     delay(1.0)
+
+    return True
 
 
 row2 = [
