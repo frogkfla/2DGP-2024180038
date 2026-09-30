@@ -46,7 +46,7 @@ def play_animation(animation):
                 return False
 
             draw_frame(frame)
-            delay(0.08)
+            delay(0.07)
      
     delay(1.0)
 
@@ -99,14 +99,24 @@ row6 = [
     (477, 0, 36, 43)
 ]
 
-while True:
+running = True
 
-    play_animation(row2)
+while running:
 
-    play_animation(row3)
+    if not play_animation(row2):
+        running = False
+        break
 
-    play_animation(row4)
+    if not play_animation(row3):
+        running = False
+        break
 
-    play_animation(row6)
+    if not play_animation(row4):
+        running = False
+        break
+
+    if not play_animation(row6):
+        running = False
+        break
 
 close_canvas()
