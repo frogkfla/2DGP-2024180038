@@ -5,6 +5,7 @@ open_canvas()
 ground = load_image('ground.png')
 character = load_image('kirby.png')
 
+
 # 스프라이트 시트에서 한 프레임을 잘라서 출력하는 함수
 def draw_frame(frame_data):
     clear_canvas()
