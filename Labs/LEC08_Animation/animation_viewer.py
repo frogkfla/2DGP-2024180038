@@ -83,3 +83,9 @@ for repeat in range(4):
     for frame in row4:
         draw_frame(frame)
         delay(0.08)
+
+
+for repeat in range(4):
+    for frame in row6:
+        draw_frame(frame)
+        delay(0.08)
