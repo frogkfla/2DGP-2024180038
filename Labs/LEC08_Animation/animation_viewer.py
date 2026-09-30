@@ -5,6 +5,7 @@ open_canvas()
 ground = load_image('ground.png')
 character = load_image('kirby.png')
 
+
 def draw_frame(frame_data):
     clear_canvas()
 
@@ -20,6 +21,18 @@ def draw_frame(frame_data):
     )
 
     update_canvas()
+
+
+def play_animation(animation):
+    
+    for repeat in range(5):
+        
+        for frame in animation:
+            draw_frame(frame)
+            delay(0.08)
+    
+    delay(1.0)
+
 
 row2 = [
     (5,   362, 41, 39),
