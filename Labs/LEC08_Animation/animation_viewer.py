@@ -19,7 +19,7 @@ def draw_frame(frame_data):
     character.clip_draw(
         left, bottom,
         width, height,
-        400, 195,
+        400, 185,
         draw_width, draw_height
     )
 
