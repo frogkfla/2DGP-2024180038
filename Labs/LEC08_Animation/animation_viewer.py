@@ -26,6 +26,16 @@ def draw_frame(frame_data):
     update_canvas()
 
 
+def check_quit():
+    events = get_events()
+
+    for event in events:
+        if event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+            return True
+
+    return False
+
+
 def play_animation(animation):
     
     for repeat in range(5):
