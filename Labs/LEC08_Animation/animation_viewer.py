@@ -66,3 +66,8 @@ row6 = [
     (407, 0, 43, 43),
     (477, 0, 36, 43)
 ]
+
+for repeat in range(4):
+    for frame in row2:
+        draw_frame(frame)
+        delay(0.08)
