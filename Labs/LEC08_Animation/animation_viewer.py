@@ -13,11 +13,14 @@ def draw_frame(frame_data):
 
     left, bottom, width, height = frame_data
 
+    draw_height = 300
+    draw_width = width * (draw_height / height)
+
     character.clip_draw(
         left, bottom,
         width, height,
-        400, 120,
-        width * 2.5, height * 2.5
+        400, 195,
+        draw_width, draw_height
     )
 
     update_canvas()
@@ -80,25 +83,14 @@ row6 = [
     (477, 0, 36, 43)
 ]
 
-for repeat in range(4):
-    for frame in row2:
-        draw_frame(frame)
-        delay(0.08)
+while True:
 
+    play_animation(row2)
 
-for repeat in range(4):
-    for frame in row3:
-        draw_frame(frame)
-        delay(0.08)
+    play_animation(row3)
 
+    play_animation(row4)
 
-for repeat in range(4):
-    for frame in row4:
-        draw_frame(frame)
-        delay(0.08)
+    play_animation(row6)
 
-
-for repeat in range(4):
-    for frame in row6:
-        draw_frame(frame)
-        delay(0.08)
+close_canvas()
