@@ -5,11 +5,8 @@ open_canvas()
 ground = load_image('ground.png')
 character = load_image('kirby.png')
 
-frame = 0
-
-for x in range(50, 750, 5):
+def draw_frame(frame_data):
     clear_canvas()
 
-    ground.draw(400, 35, 800, 70)
 
-    update_canvas()
+
