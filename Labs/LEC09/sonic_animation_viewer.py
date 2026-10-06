@@ -289,3 +289,7 @@ while True:
         if event.type == SDL_QUIT:
             close_canvas()
             exit()
+
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+            close_canvas()
+            exit()
