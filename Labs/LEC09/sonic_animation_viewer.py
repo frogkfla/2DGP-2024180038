@@ -135,6 +135,20 @@ animations = [
     frames10
 ]
 
+# 각 애니메이션의 이동 여부
+moving_animations = [
+    True,   # 1번
+    True,   # 2번
+    True,   # 3번
+    True,   # 4번
+    True,   # 5번
+    True,   # 6번
+    True,   # 7번
+    True,   # 8번
+    False,  # 9번
+    False   # 10번
+]
+
 # 전체 프레임 수 확인
 total_frames = sum(len(animation) for animation in animations)
 print("전체 애니메이션 개수:", len(animations))
