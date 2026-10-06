@@ -151,6 +151,14 @@ frame_interval = 0.1
 is_paused = False
 pause_start_time = 0.0
 
+character_x = 100
+character_y = 300
+
+move_speed = 200
+
+last_move_time = get_time()
+
+
 while True:
     clear_canvas()
 
@@ -163,7 +171,7 @@ while True:
     sonic.clip_draw(
         x, y,
         width, height,
-        600, 300,
+        character_x, character_y,
         width * 4, height * 4
     )
 
