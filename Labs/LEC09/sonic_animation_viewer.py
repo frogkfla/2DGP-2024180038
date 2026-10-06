@@ -112,6 +112,14 @@ frames9 = [
     (254, 112, 33, 35)
 ]
 
+# 열 번째 애니메이션
+frames10 = [
+    (6,   57, 34, 39),
+    (49,  57, 34, 42),
+    (96,  60, 23, 38),
+    (125, 60, 23, 38)
+]
+
 
 # 전체 애니메이션
 animations = [
@@ -123,7 +131,8 @@ animations = [
     frames6,
     frames7,
     frames8,
-    frames9
+    frames9,
+    frames10
 ]
 
 
