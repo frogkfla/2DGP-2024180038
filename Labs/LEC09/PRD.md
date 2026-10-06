@@ -15,7 +15,7 @@ Python과 pico2d를 사용하며 프로그램은
 - Library: pico2d
 - 실행 파일: `sonic_animation_viewer.py`
 - Sprite Image: `sonic-sprite.png`
-- Canvas Size: 800 x 600
+- Canvas Size: 1200 x 600
 
 
 ## 3. 스프라이트 구성
