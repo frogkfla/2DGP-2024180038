@@ -179,6 +179,14 @@ while True:
 
     current_time = get_time()
 
+    # 이전 화면으로부터 얼마나 시간이 지났는지 계산
+    deltaTime = current_time - last_move_time
+    last_move_time = current_time
+
+    # 1번 애니메이션은 오른쪽으로 이동
+    if animation == 0 and not is_paused:
+        character_x += move_speed * deltaTime
+
     if not is_paused:
         if current_time - last_frame_time >= frame_interval:
             frame += 1
