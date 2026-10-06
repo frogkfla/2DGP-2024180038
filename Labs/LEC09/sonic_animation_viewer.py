@@ -211,7 +211,7 @@ while True:
     last_move_time = current_time
 
     # 이동 애니메이션 처리
-    if animation == 0 and not is_paused:
+    if moving_animations[animation] and not is_paused:
         character_x, move_direction = move_character(character_x, move_direction, deltaTime)
 
     if not is_paused:
