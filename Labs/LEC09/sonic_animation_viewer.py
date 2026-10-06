@@ -72,6 +72,8 @@ while True:
 
     else:
         if current_time - pause_start_time >= 1.0:
+            animation = (animation + 1) % len(animations)
+
             frame = 0
             repeat_count = 0
             is_paused = False
