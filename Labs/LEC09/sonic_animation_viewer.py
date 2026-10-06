@@ -7,11 +7,12 @@ sonic = load_image('sonic-sprite.png')
 while True:
     clear_canvas()
 
-    # 첫 번째 Sonic 프레임
+    # 첫 번째 Sonic 프레임을 4배 크기로 출력
     sonic.clip_draw(
-        1, 448,       # 이미지에서 프레임의 왼쪽 아래 좌표
-        29, 38,       # 프레임의 가로, 세로 크기
-        600, 300      # 화면에 출력할 위치
+        1, 448,
+        29, 38,
+        600, 300,
+        29 * 4, 38 * 4
     )
 
     update_canvas()
