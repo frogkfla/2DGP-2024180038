@@ -153,7 +153,8 @@ moving_animations = [
 total_frames = sum(len(animation) for animation in animations)
 print("전체 애니메이션 개수:", len(animations))
 print("전체 프레임 개수:", total_frames)
-
+print("이동 애니메이션 개수:", sum(moving_animations))
+print("중앙 재생 애니메이션 개수:", len(moving_animations) - sum(moving_animations))
 
 animation = 0
 frame = 0
