@@ -22,13 +22,17 @@ frames = [
 
 frame = 0
 
+# 프레임 변경에 사용할 시간
+last_frame_time = get_time()
+frame_interval = 0.1
+
 while True:
     clear_canvas()
 
     # 현재 프레임 정보 가져오기
     x, y, width, height = frames[frame]
 
-    # 현재 프레임을 4배 크기로 출력
+    # 현재 프레임을 원본의 4배 크기로 출력
     sonic.clip_draw(
         x, y,
         width, height,
@@ -38,8 +42,13 @@ while True:
 
     update_canvas()
 
-    # 다음 프레임으로 이동
-    frame = (frame + 1) % len(frames)
+    # 현재 시간 확인
+    current_time = get_time()
+
+    # 0.1초가 지났을 때만 다음 프레임으로 변경
+    if current_time - last_frame_time >= frame_interval:
+        frame = (frame + 1) % len(frames)
+        last_frame_time = current_time
 
     events = get_events()
 
@@ -47,5 +56,3 @@ while True:
         if event.type == SDL_QUIT:
             close_canvas()
             exit()
-
-    delay(0.1)
