@@ -26,6 +26,10 @@ repeat_count = 0
 last_frame_time = get_time()
 frame_interval = 0.1
 
+# 1초 정지에 사용할 변수
+is_paused = False
+pause_start_time = 0.0
+
 while True:
     clear_canvas()
 
@@ -42,15 +46,31 @@ while True:
 
     current_time = get_time()
 
-    if current_time - last_frame_time >= frame_interval:
-        frame += 1
+    # 애니메이션 재생 중
+    if not is_paused:
+        if current_time - last_frame_time >= frame_interval:
+            frame += 1
 
-        # 마지막 프레임까지 재생했으면 1회 완료
-        if frame >= len(frames):
+            if frame >= len(frames):
+                repeat_count += 1
+
+                # 5회 반복 완료
+                if repeat_count >= 5:
+                    frame = len(frames) - 1
+                    is_paused = True
+                    pause_start_time = current_time
+                else:
+                    frame = 0
+
+            last_frame_time = current_time
+
+    # 1초 정지 중
+    else:
+        if current_time - pause_start_time >= 1.0:
             frame = 0
-            repeat_count += 1
-
-        last_frame_time = current_time
+            repeat_count = 0
+            is_paused = False
+            last_frame_time = current_time
 
     events = get_events()
 
