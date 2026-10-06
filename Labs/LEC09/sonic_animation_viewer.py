@@ -171,6 +171,12 @@ character_y = 300
 move_speed = 200
 move_direction = 1
 
+jump_start_y = 300
+jump_height = 180
+jump_start_y = 300
+jump_height = 180
+jump_time = 0.0
+
 last_move_time = get_time()
 
 def move_character(character_x, move_direction, deltaTime):
@@ -185,6 +191,18 @@ def move_character(character_x, move_direction, deltaTime):
         move_direction = 1
 
     return character_x, move_direction
+
+def jump_character(character_y, jump_time, deltaTime):
+    jump_time += deltaTime
+
+    character_y = jump_start_y + jump_height * 4 * jump_time * (1.0 - jump_time)
+
+    if jump_time >= 1.0:
+        jump_time = 0.0
+        character_y = jump_start_y
+
+    return character_y, jump_time
+
 
 while True:
     clear_canvas()
@@ -214,6 +232,9 @@ while True:
     if moving_animations[animation] and not is_paused:
         character_x, move_direction = move_character(character_x, move_direction, deltaTime)
 
+    if animation == 2 and not is_paused:
+        character_y, jump_time = jump_character(character_y, jump_time, deltaTime)
+
     if not is_paused:
         if current_time - last_frame_time >= frame_interval:
             frame += 1
@@ -238,6 +259,9 @@ while True:
             repeat_count = 0
             is_paused = False
             last_frame_time = current_time
+
+            character_y = jump_start_y
+            jump_time = 0.0
 
     events = get_events()
 
