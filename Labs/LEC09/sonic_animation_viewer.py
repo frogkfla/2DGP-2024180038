@@ -263,6 +263,12 @@ while True:
             character_y = jump_start_y
             jump_time = 0.0
 
+            if not moving_animations[animation]:
+                character_x = 600
+            else:
+                character_x = 100
+                move_direction = 1
+                
     events = get_events()
 
     for event in events:
