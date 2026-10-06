@@ -159,6 +159,18 @@ move_direction = 1
 
 last_move_time = get_time()
 
+def move_character(character_x, move_direction, deltaTime):
+    character_x += move_speed * move_direction * deltaTime
+
+    if character_x >= 1100:
+        character_x = 1100
+        move_direction = -1
+
+    elif character_x <= 100:
+        character_x = 100
+        move_direction = 1
+
+    return character_x, move_direction
 
 while True:
     clear_canvas()
@@ -184,17 +196,9 @@ while True:
     deltaTime = current_time - last_move_time
     last_move_time = current_time
 
-    # 1번 애니메이션은 좌우로 이동
+    # 이동 애니메이션 처리
     if animation == 0 and not is_paused:
-        character_x += move_speed * move_direction * deltaTime
-
-    if character_x >= 1100:
-        character_x = 1100
-        move_direction = -1
-
-    elif character_x <= 100:
-        character_x = 100
-        move_direction = 1
+        character_x, move_direction = move_character(character_x, move_direction, deltaTime)
 
     if not is_paused:
         if current_time - last_frame_time >= frame_interval:
