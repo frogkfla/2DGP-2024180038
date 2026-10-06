@@ -135,6 +135,11 @@ animations = [
     frames10
 ]
 
+# 전체 프레임 수 확인
+total_frames = sum(len(animation) for animation in animations)
+print("전체 애니메이션 개수:", len(animations))
+print("전체 프레임 개수:", total_frames)
+
 
 animation = 0
 frame = 0
