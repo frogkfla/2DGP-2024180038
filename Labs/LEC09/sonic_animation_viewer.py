@@ -203,6 +203,20 @@ def jump_character(character_y, jump_time, deltaTime):
 
     return character_y, jump_time
 
+def check_frames():
+    image_width = 399
+    image_height = 525
+
+    for animation_index, animation_frames in enumerate(animations):
+        for frame_index, (x, y, width, height) in enumerate(animation_frames):
+            if x < 0 or y < 0 or x + width > image_width or y + height > image_height:
+                print("잘못된 프레임:", animation_index + 1, frame_index + 1)
+                return
+
+    print("모든 프레임 좌표 정상")
+
+check_frames()
+
 
 while True:
     clear_canvas()
@@ -268,7 +282,7 @@ while True:
             else:
                 character_x = 100
                 move_direction = 1
-                
+
     events = get_events()
 
     for event in events:
