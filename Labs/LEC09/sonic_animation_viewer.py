@@ -137,10 +137,10 @@ animations = [
 
 # 각 애니메이션의 이동 여부
 moving_animations = [
-    True,   # 1번
+    False,  # 1번
     True,   # 2번
     True,   # 3번
-    True,   # 4번
+    False,  # 4번
     True,   # 5번
     True,   # 6번
     True,   # 7번
@@ -226,9 +226,19 @@ while True:
     # 현재 프레임
     x, y, width, height = current_frames[frame]
 
-    sonic.clip_draw(
+    if move_direction == 1:
+        sonic.clip_draw(
         x, y,
         width, height,
+        character_x, character_y,
+        width * 4, height * 4
+    )
+    else:
+        sonic.clip_composite_draw(
+        x, y,
+        width, height,
+        0,
+        'h',
         character_x, character_y,
         width * 4, height * 4
     )
