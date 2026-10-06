@@ -4,9 +4,8 @@ open_canvas(1200, 600)
 
 sonic = load_image('sonic-sprite.png')
 
-# 첫 번째 애니메이션의 프레임
-# (x, y, width, height)
-frames = [
+# 첫 번째 애니메이션
+frames1 = [
     (0,   443, 30, 43),
     (30,  443, 28, 43),
     (58,  443, 30, 43),
@@ -20,20 +19,29 @@ frames = [
     (300, 443, 32, 43)
 ]
 
+# 전체 애니메이션
+animations = [
+    frames1
+]
+
+animation = 0
 frame = 0
 repeat_count = 0
 
 last_frame_time = get_time()
 frame_interval = 0.1
 
-# 1초 정지에 사용할 변수
 is_paused = False
 pause_start_time = 0.0
 
 while True:
     clear_canvas()
 
-    x, y, width, height = frames[frame]
+    # 현재 동작의 프레임 목록
+    current_frames = animations[animation]
+
+    # 현재 프레임
+    x, y, width, height = current_frames[frame]
 
     sonic.clip_draw(
         x, y,
@@ -46,17 +54,15 @@ while True:
 
     current_time = get_time()
 
-    # 애니메이션 재생 중
     if not is_paused:
         if current_time - last_frame_time >= frame_interval:
             frame += 1
 
-            if frame >= len(frames):
+            if frame >= len(current_frames):
                 repeat_count += 1
 
-                # 5회 반복 완료
                 if repeat_count >= 5:
-                    frame = len(frames) - 1
+                    frame = len(current_frames) - 1
                     is_paused = True
                     pause_start_time = current_time
                 else:
@@ -64,7 +70,6 @@ while True:
 
             last_frame_time = current_time
 
-    # 1초 정지 중
     else:
         if current_time - pause_start_time >= 1.0:
             frame = 0
