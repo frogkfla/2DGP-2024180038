@@ -155,6 +155,7 @@ character_x = 100
 character_y = 300
 
 move_speed = 200
+move_direction = 1
 
 last_move_time = get_time()
 
@@ -183,9 +184,17 @@ while True:
     deltaTime = current_time - last_move_time
     last_move_time = current_time
 
-    # 1번 애니메이션은 오른쪽으로 이동
+    # 1번 애니메이션은 좌우로 이동
     if animation == 0 and not is_paused:
-        character_x += move_speed * deltaTime
+        character_x += move_speed * move_direction * deltaTime
+
+    if character_x >= 1100:
+        character_x = 1100
+        move_direction = -1
+
+    elif character_x <= 100:
+        character_x = 100
+        move_direction = 1
 
     if not is_paused:
         if current_time - last_frame_time >= frame_interval:
