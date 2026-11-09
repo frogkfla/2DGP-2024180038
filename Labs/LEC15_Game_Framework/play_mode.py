@@ -12,6 +12,9 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             import title_mode
             game_framework.change_mode(title_mode)
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
+            import pause_mode
+            game_framework.push_mode(pause_mode)
         else:
             boy.handle_event(event)
 
@@ -36,6 +39,14 @@ def draw():
 
 
 render = draw
+
+
+def pause():
+    boy.clear_movement_input()
+
+
+def resume():
+    pass
 
 
 def finish():
