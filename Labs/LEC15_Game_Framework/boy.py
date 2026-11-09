@@ -59,6 +59,7 @@ class Boy:
                 event.key == SDLK_SPACE and
                 self.state == 'SLEEP'):
             self.wake_up()
+            self.fire_ball()
             return
 
         if (event.type == SDL_KEYDOWN and
